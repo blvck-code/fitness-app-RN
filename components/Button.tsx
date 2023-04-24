@@ -17,11 +17,13 @@ interface Props {
   style?: StyleProp<ViewStyle>;
   children: ReactNode;
   textStyle?: StyleProp<TextStyle>;
+  onPress: () => void;
 }
 
-const Button: React.FC<Props> = ({ style, children, textStyle }) => {
+const Button: React.FC<Props> = ({ style, children, textStyle, onPress }) => {
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={[
         {
           backgroundColor: Colors.accent,

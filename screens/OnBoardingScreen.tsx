@@ -12,9 +12,14 @@ import Spacing from "../constants/Spacing";
 import Colors from "../constants/Colors";
 import Font from "../constants/Font";
 import Button from "../components/Button";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../types";
 
-const OnBoardingScreen = () => {
+type Props = NativeStackScreenProps<RootStackParamList, "OnBoarding">;
+
+const OnBoardingScreen: React.FC<Props> = ({ navigation: { navigate } }) => {
   const { height } = Dimensions.get("window");
+  const handlePress = () => navigate("Home");
   return (
     <ImageBackground
       source={require("../assets/images/onboarding.jpeg")}
@@ -47,7 +52,7 @@ const OnBoardingScreen = () => {
           Staying fit to keep you in good condition can now go through mobile
           apps
         </Text>
-        <Button>Get Started</Button>
+        <Button onPress={handlePress}>Get Started</Button>
       </LinearGradient>
     </ImageBackground>
   );
