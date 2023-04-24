@@ -3,7 +3,9 @@ import React from "react";
 
 const OnBoardingScreen = () => {
   return (
-    <ImageBackground>
+    <ImageBackground
+      source={require("../assets/images/onboarding.jpeg")}
+      style={{ flex: 1 }}>
       <Text style={{ color: "#fff" }}>Working</Text>
     </ImageBackground>
   );
