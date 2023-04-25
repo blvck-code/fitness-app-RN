@@ -24,12 +24,13 @@ import CategoryList from "../components/CategoryList";
 import SectionHeader from "../components/SectionHeader";
 import Workout from "../components/Workout";
 import Rating from "react-native-easy-rating";
+import Screen from "../components/Screen";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 
 const HomeScreen: React.FC<Props> = ({ navigation: { navigate } }) => {
   return (
-    <SafeAreaView>
+    <Screen>
       <ScrollView
         style={{
           paddingHorizontal: Spacing.padding.base,
@@ -108,6 +109,7 @@ const HomeScreen: React.FC<Props> = ({ navigation: { navigate } }) => {
         <SectionHeader title="Trending Plans" />
         {workoutPlans.map((plan) => (
           <TouchableOpacity
+            onPress={() => console.log("Navigate to plan")}
             style={{
               padding: Spacing.padding.sm,
               marginBottom: Spacing.margin.base,
@@ -157,7 +159,7 @@ const HomeScreen: React.FC<Props> = ({ navigation: { navigate } }) => {
           </TouchableOpacity>
         ))}
       </ScrollView>
-    </SafeAreaView>
+    </Screen>
   );
 };
 

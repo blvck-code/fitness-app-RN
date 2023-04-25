@@ -15,6 +15,7 @@ interface Props {
   size?: number;
   color?: string;
   name: keyof typeof Ionicons.glyphMap;
+  onPress?: () => void;
 }
 
 const IconButton: React.FC<Props> = ({
@@ -22,9 +23,11 @@ const IconButton: React.FC<Props> = ({
   color = Colors.text,
   size = 24,
   name,
+  onPress,
 }) => {
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={[
         {
           height: 40,
